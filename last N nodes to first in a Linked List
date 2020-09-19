@@ -1,0 +1,27 @@
+def appendLastNToFirst(head, n) :
+    
+    if n<=0 or n>=lengthLL(head):
+        return head
+    count = lengthLL(head)
+    temp2 = head
+    temp = head
+    rem = count-n
+    i=0
+    while i < rem:
+        
+        head = head.next
+        temp2 = head
+        i += 1
+     
+    while head.next is not None:
+        head = head.next
+        
+    head.next = temp
+    i=0
+    while i < rem-1:
+        temp = temp.next
+        i += 1
+    temp.next = None
+    
+    return temp2
+    
